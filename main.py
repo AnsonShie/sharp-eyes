@@ -24,24 +24,28 @@ def on_pin_pressed_p0():
             basic.show_icon(IconNames.PITCHFORK)
         else:
             basic.show_icon(IconNames.SKULL)
-        for index in range(randint(50, 200)):
-            basic.pause(randint(10, 10))
-            if 形狀 == 0:
-                if input.pin_is_pressed(TouchPin.P1):
-                    for index2 in range(2):
-                        basic.show_string("P1 WIN")
-                    沒有贏家 = 0
-                elif input.pin_is_pressed(TouchPin.P2):
-                    for index3 in range(2):
-                        basic.show_string("P2 WIN")
-                    沒有贏家 = 0
-            else:
-                if input.pin_is_pressed(TouchPin.P1):
-                    for index4 in range(2):
-                        basic.show_string("P2 WIN")
-                    沒有贏家 = 0
-                elif input.pin_is_pressed(TouchPin.P2):
-                    for index5 in range(2):
-                        basic.show_string("P1 WIN")
-                    沒有贏家 = 0
+        CheckWhoWins()
 input.on_pin_pressed(TouchPin.P0, on_pin_pressed_p0)
+
+def CheckWhoWins():
+    global 沒有贏家
+    for index in range(randint(50, 200)):
+        basic.pause(randint(10, 10))
+        if 形狀 == 0:
+            if input.pin_is_pressed(TouchPin.P1):
+                for index2 in range(2):
+                    basic.show_string("P1 WIN")
+                沒有贏家 = 0
+            elif input.pin_is_pressed(TouchPin.P2):
+                for index3 in range(2):
+                    basic.show_string("P2 WIN")
+                沒有贏家 = 0
+        else:
+            if input.pin_is_pressed(TouchPin.P1):
+                for index4 in range(2):
+                    basic.show_string("P2 WIN")
+                沒有贏家 = 0
+            elif input.pin_is_pressed(TouchPin.P2):
+                for index5 in range(2):
+                    basic.show_string("P1 WIN")
+                沒有贏家 = 0
