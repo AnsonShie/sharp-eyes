@@ -36,6 +36,8 @@ function CheckWhoWins () {
                 }
                 沒有贏家 = 0
             } else if (input.pinIsPressed(TouchPin.P2)) {
+                radio.setGroup(255)
+                radio.sendNumber(1)
                 for (let index = 0; index < 2; index++) {
                     basic.showString("P2 WIN")
                 }
@@ -43,6 +45,8 @@ function CheckWhoWins () {
             }
         } else {
             if (input.pinIsPressed(TouchPin.P1)) {
+                radio.setGroup(255)
+                radio.sendNumber(1)
                 for (let index = 0; index < 2; index++) {
                     basic.showString("P2 WIN")
                 }
